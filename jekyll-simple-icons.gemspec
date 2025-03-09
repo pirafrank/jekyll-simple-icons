@@ -23,9 +23,6 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "jekyll", ">= 3.7", "< 5.0"
 
-  spec.add_dependency "httparty", "~> 0.22.0"
-  spec.add_dependency "json", "~> 2.7"
-
   spec.add_development_dependency "bundler", "~> 2.6"
   spec.add_development_dependency "rake", "~> 13.0"
   spec.add_development_dependency "rubocop-jekyll", "~> 0.14"
