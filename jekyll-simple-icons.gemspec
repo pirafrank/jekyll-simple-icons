@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "lib/jekyll-simple-icons/version.rb"
+require_relative "lib/jekyll-simple-icons/version"
 
 Gem::Specification.new do |spec|
   spec.name = "jekyll-simple-icons"
@@ -14,6 +14,10 @@ Gem::Specification.new do |spec|
 
   spec.license = "MIT"
   spec.required_ruby_version = ">= 3.2.0"
+
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(%r!^bin/!) { |f| File.basename(f) }
+  spec.require_paths = ["lib"]
 
   spec.metadata["allowed_push_host"] = "https://rubygems.org"
 
