@@ -27,6 +27,13 @@ end
 
 2. Run `bundle install`
 
+3. Add the following to your website `_config.yml` file:
+
+```yaml
+plugins:
+- jekyll-simple-icons
+```
+
 ### Install from git
 
 Alternatively, you can get code straight from this repository. Code from `main` branch should be stable enough but may contain unreleased software with bugs or breaking changes. Unreleased software should be considered of beta quality.
