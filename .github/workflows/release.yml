@@ -1,0 +1,31 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create release and upload assets
+        uses: softprops/action-gh-release@v2
+        with:
+          name: ${{ github.ref_name }}
+          tag_name: ${{ github.ref_name }}
+          body: |
+            Release notes for `${{ github.ref_name }}` are available here: https://github.com/pirafrank/jekyll-simple-icons/blob/main/CHANGELOG.md
+          generate_release_notes: false
+          draft: false
+          prerelease: false
+          # Note: drafts and prereleases cannot be set as latest.
+          make_latest: true
+          fail_on_unmatched_files: true
+          # no need to specify GITHUB_TOKEN here, it is automatically provided by GitHub Actions
+          # https://github.com/softprops/action-gh-release#-customizing
+          # https://docs.github.com/en/actions/security-for-github-actions/security-guides/automatic-token-authentication

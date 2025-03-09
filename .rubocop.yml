@@ -1,0 +1,25 @@
+require: rubocop-jekyll
+
+inherit_gem:
+  rubocop-jekyll: .rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.2
+  Exclude:
+      - vendor/**/*
+
+Metrics/LineLength:
+  Max: 154
+
+Metrics/MethodLength:
+  Max: 40
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/HashSyntax:
+  EnforcedStyle: no_mixed_keys
+  EnforcedShorthandSyntax: consistent
